@@ -11,8 +11,12 @@ A user can...
 - add images for a ride
 
 ### Models 
-- User (has_many rides, has_many signups, has_many added_rides, through signups, source: ride)
-- Ride (belongs_to user, has_many signups, has_many added_users, through signups, source: user)
-- Comment? ()
-- Signup? (belongs_to ride, belongs_to user)
+User (has_many rides, has_many signups, has_many added_rides, through signups, source: ride)
+- attributes: username, email, password_digest
+Ride (belongs_to user, has_many signups, has_many added_users, through signups, source: user)
+- attributes: name, starting location, time, date, difficulty level, distance, description, user_id
+Comment? ()
+- attributes: content
+Signup (belongs_to ride, belongs_to user)
+- attributes: ride_id, user_id, status (boolean)
 
