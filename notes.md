@@ -14,5 +14,5 @@ A user can...
 - User (has_many rides, has_many signups, has_many added_rides, through signups, source: ride)
 - Ride (belongs_to user, has_many signups, has_many added_users, through signups, source: user)
 - Comment? ()
-- Sign up? (belongs_to ride, belongs_to user)
+- Signup? (belongs_to ride, belongs_to user)
 
