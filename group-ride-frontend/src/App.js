@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './components/Navigation';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Navigation />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
