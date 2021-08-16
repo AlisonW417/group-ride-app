@@ -23,5 +23,6 @@ A user can...
 ### To Do:
 - add serializers to backend 
 - finish signup feature (additional actions to login the user)
+- reset signup form
 - continue with user-related fetch request to login and logout
 
