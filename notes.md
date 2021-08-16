@@ -20,3 +20,8 @@ A user can...
 ### Signup (belongs_to ride, belongs_to user)
 - attributes: ride_id, user_id, status (boolean)
 
+### To Do:
+- add serializers to backend 
+- finish signup feature (additional actions to login the user)
+- continue with user-related fetch request to login and logout
+
