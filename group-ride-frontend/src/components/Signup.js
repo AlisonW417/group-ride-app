@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Form, Button } from 'react-bootstrap';
 import { updateSignupForm } from '../actions/signupForm';
+import { signup } from '../actions/user';
 
-const Signup = ( { signupFormData, updateSignupForm }) => {
+const Signup = ( { signupFormData, updateSignupForm, signup, history }) => {
     const handleOnChange = (event) => {
         const newFormData = {
             ...signupFormData,
@@ -12,11 +13,16 @@ const Signup = ( { signupFormData, updateSignupForm }) => {
         updateSignupForm(newFormData)
     }
 
+    const handleOnSubmit = (event) => {
+        event.preventDefault()
+        signup(signupFormData, history)
+    }
+
     return (
         <Container>
             <div>
                 <h2>Sign up for Group Ride to start logging your rides and interacting with other users</h2>
-                <Form>
+                <Form onSubmit={ handleOnSubmit }>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" name="email" value= { signupFormData.email } onChange={ handleOnChange } />
@@ -46,4 +52,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateSignupForm })(Signup)
+export default connect(mapStateToProps, { updateSignupForm, signup })(Signup)
