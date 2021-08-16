@@ -6,7 +6,7 @@ export const signup = (signupData, history) => {
         return fetch("http://localhost:3001/signup", {
             credentials: 'include',
             method: 'POST',
-            header: {
+            headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
