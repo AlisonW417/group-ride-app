@@ -1,3 +1,10 @@
+export const setCurrentUser = user => {
+    return {
+        type: "SET_CURRENT_USER",
+        user
+    }
+}
+
 export const signup = (signupData, history) => {
     return (dispatch) => {
         const newUserData = {
@@ -15,7 +22,7 @@ export const signup = (signupData, history) => {
         .then(r => r.json())
         .then(resp => {
             console.log(resp)
-            // add actions here later!!
+            dispatch(setCurrentUser(resp.data))
         })
         .catch(err => console.log(err))
     }
