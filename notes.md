@@ -25,4 +25,5 @@ A user can...
 - finish signup feature (additional actions to login the user)
 - reset signup form
 - continue with user-related fetch request to login and logout
+- add fetch request to find the current user (create sessions conroller on backend)
 
