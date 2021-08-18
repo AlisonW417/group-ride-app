@@ -1,3 +1,5 @@
+import { resetSignupForm } from './signupForm'
+
 export const setCurrentUser = user => {
     return {
         type: "SET_CURRENT_USER",
@@ -23,6 +25,7 @@ export const signup = (signupData, history) => {
         .then(resp => {
             console.log(resp)
             dispatch(setCurrentUser(resp.data))
+            dispatch(resetSignupForm())
         })
         .catch(err => console.log(err))
     }
