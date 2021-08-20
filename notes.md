@@ -27,9 +27,6 @@ A user can...
 - continue with user-related fetch request to login and logout
 
 NEXT SESSIONS:
-- add in routes and refactor navigation
-- add sessions controller 
-- add functionality to login 
 - add functionality to log out
 - add ability to find current user (if already logged in)
 - add fetch request to find the current user (create sessions conroller on backend)
