@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
+import Logout from './Logout';
 
 const Navigation = () => {
     return (
@@ -11,6 +12,7 @@ const Navigation = () => {
                         <Nav.Link href="/signup">Sign up</Nav.Link>
                         <Nav.Link href="/login">Log in</Nav.Link>
                     </Nav>
+                    <Logout />
                 </Container>
             </Navbar>    
         </Container>
