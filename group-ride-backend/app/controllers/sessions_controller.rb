@@ -10,4 +10,11 @@ class SessionsController < ApplicationController
                 error: "Invalid Login Information"
             }
     end 
+
+    def destroy
+        session.clear
+        reander json: {
+            message: "Logged out"
+        }
+    end 
 end
