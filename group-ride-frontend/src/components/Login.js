@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Form, Button } from 'react-bootstrap';
 import { updateLoginForm } from '../actions/loginForm';
-// import { signup } from '../actions/user';
+import { login } from '../actions/user';
 
-const Login = ( {updateLoginForm, loginFormData }) => {
+const Login = ( {updateLoginForm, loginFormData, login, history }) => {
     const handleOnChange = (event) => {
         const newFormData = {
             ...loginFormData,
@@ -13,16 +13,16 @@ const Login = ( {updateLoginForm, loginFormData }) => {
         updateLoginForm(newFormData)
     }
 
-    // const handleOnSubmit = (event) => {
-    //     event.preventDefault()
-    //     signup(signupFormData, history)
-    // }
+    const handleOnSubmit = (event) => {
+        event.preventDefault()
+        login(loginFormData, history)
+    }
 
     return (
         <Container>
             <div>
                 <h2>Please Log in</h2>
-                <Form>
+                <Form onSubmit={ handleOnSubmit }>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
                         <Form.Control type="text" placeholder="Create a username" name="username" value= { loginFormData.username } onChange={ handleOnChange } />
@@ -47,4 +47,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateLoginForm })(Login)
+export default connect(mapStateToProps, { updateLoginForm, login })(Login)

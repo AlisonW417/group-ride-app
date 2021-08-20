@@ -7,6 +7,25 @@ export const setCurrentUser = user => {
     }
 }
 
+export const login = (loginData, history) => {
+    return (dispatch) => {
+        return fetch("http://localhost:3001/login", {
+            credentials: 'include',
+            method: 'POST', 
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        })
+        .then(resp => resp.json())
+        .then(resp => {
+            console.log(resp)
+        })
+        .catch(err => console.log(err))
+    }
+}
+
 export const signup = (signupData, history) => {
     return (dispatch) => {
         const newUserData = {
@@ -21,7 +40,7 @@ export const signup = (signupData, history) => {
             },
             body: JSON.stringify(newUserData)
         })
-        .then(r => r.json())
+        .then(resp => resp.json())
         .then(resp => {
             console.log(resp)
             dispatch(setCurrentUser(resp.data))

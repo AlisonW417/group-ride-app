@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     def create 
+        # byebug
         @user = User.find_by(username: params[:session][:username])
 
         if @user && @user.authenticate(params[:session][:password])
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
             render json: {
                 error: "Invalid Login Information"
             }
+        end
     end 
 
     def destroy
