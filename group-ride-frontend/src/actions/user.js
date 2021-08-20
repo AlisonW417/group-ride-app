@@ -1,3 +1,4 @@
+import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
 
 export const setCurrentUser = user => {
@@ -21,6 +22,9 @@ export const login = (loginData, history) => {
         .then(resp => resp.json())
         .then(resp => {
             console.log(resp)
+            dispatch(setCurrentUser(resp.data))
+            dispatch(resetLoginForm())
+            history.push('/')
         })
         .catch(err => console.log(err))
     }
@@ -45,6 +49,7 @@ export const signup = (signupData, history) => {
             console.log(resp)
             dispatch(setCurrentUser(resp.data))
             dispatch(resetSignupForm())
+            history.push('/')
         })
         .catch(err => console.log(err))
     }
