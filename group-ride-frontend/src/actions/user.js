@@ -1,3 +1,4 @@
+import { FormSelect } from 'react-bootstrap'
 import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
 
@@ -51,6 +52,22 @@ export const signup = (signupData, history) => {
             dispatch(resetSignupForm())
             history.push('/')
         })
+        .catch(err => console.log(err))
+    }
+}
+
+export const getCurrentUser = () => {
+    return (dispatch) => {
+        return fetch("http://localhost:3001/get_current_user", {
+            credentials: 'include',
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+        })
+        .then(resp => resp.json())
+        .then(resp => console.log(resp))
         .catch(err => console.log(err))
     }
 }

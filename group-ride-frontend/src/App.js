@@ -9,6 +9,10 @@ import MainContainer from './components/MainContainer';
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
+  // componentDidMount() {
+  //   this.props.getCurrentUser()
+  // }
+
   render() {
     return (
       <Container>

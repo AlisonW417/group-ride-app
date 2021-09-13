@@ -29,5 +29,5 @@ A user can...
 NEXT SESSIONS:
 - add functionality to log out
 - add ability to find current user (if already logged in)
-- add fetch request to find the current user (create sessions conroller on backend)
+- add fetch request to find the current user (create sessions controller on backend)
 

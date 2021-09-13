@@ -13,6 +13,16 @@ class SessionsController < ApplicationController
         end
     end 
 
+    def get_current_user
+        if logged_in?
+            render json: UserSerializer.new(current_user).serializable_hash
+        else 
+            render json: {
+                error: "No logged in users"
+            }
+        end 
+    end 
+
     def destroy
         session.clear
         reander json: {
