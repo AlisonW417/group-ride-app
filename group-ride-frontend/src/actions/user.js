@@ -9,6 +9,12 @@ export const setCurrentUser = user => {
     }
 }
 
+export const clearCurrentUser = () => {
+    return {
+        type: "CLEAR_CURRENT_USER"
+    }
+}
+
 export const login = (loginData, history) => {
     return (dispatch) => {
         return fetch("http://localhost:3001/login", {
@@ -56,20 +62,30 @@ export const signup = (signupData, history) => {
     }
 }
 
+export const logout = () => {
+    return (dispatch) => {
+        dispatch(clearCurrentUser())
+        return fetch('http://localhost:3001/logout', {
+            credentials: 'include',
+            method: "DELETE"
+        })
+    }
+}
+
 export const getCurrentUser = () => {
     return (dispatch) => {
         return fetch("http://localhost:3001/get_current_user", {
-            credentials: 'include',
+            credentials: 'include',    
             method: 'GET',
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             },
         })
-        .then(resp => resp.json())
+        .then(r => r.json())
         .then(resp => {
             if (resp.error) {
-                alert(resp.error)
+                console.log(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
             }
