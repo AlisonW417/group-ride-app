@@ -1,4 +1,4 @@
-import { FormSelect } from 'react-bootstrap'
+// import { FormSelect } from 'react-bootstrap'
 import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
 
@@ -67,7 +67,13 @@ export const getCurrentUser = () => {
             },
         })
         .then(resp => resp.json())
-        .then(resp => console.log(resp))
+        .then(resp => {
+            if (resp.error) {
+                alert(resp.error)
+            } else {
+                dispatch(setCurrentUser(resp.data))
+            }
+        })
         .catch(err => console.log(err))
     }
 }
