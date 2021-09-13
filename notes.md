@@ -22,12 +22,10 @@ A user can...
 
 ### To Do:
 - add serializers to backend 
-- finish signup feature (additional actions to login the user)
-- reset signup form
-- continue with user-related fetch request to login and logout
 
 NEXT SESSIONS:
-- add functionality to log out
-- add ability to find current user (if already logged in)
-- add fetch request to find the current user (create sessions controller on backend)
+- start adding ability to create a ride (full CRUD for ride)
+- start adding ride show and index pages (allow for users to view rides posted by other users)
+- add ride filtering function 
+
 
