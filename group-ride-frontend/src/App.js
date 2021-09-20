@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import Navigation from './components/Navigation';
 import Signup from './components/Signup';
-import Login from "./components/Login";
+import Login from './components/Login';
+import RideForm from './components/RideForm';
 import MainContainer from './components/MainContainer';
 import { Route } from 'react-router-dom';
 
@@ -19,10 +20,15 @@ class App extends React.Component {
     const { currentUser } = this.props
     return (
       <Container>
-        <Navigation />
+        <Navigation currentUser={currentUser} />
+        <Route exact path='/' render={() => {
+          const user = currentUser
+          return <MainContainer currentUser={user} />
+        }
+        }/>
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
-        <MainContainer currentUser={currentUser} />
+        <Route exact path='/rides/new' component={RideForm} />
       </Container>
     );
   } 

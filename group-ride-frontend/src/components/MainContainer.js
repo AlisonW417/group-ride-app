@@ -6,7 +6,8 @@ const MainContainer = ({ currentUser }) => {
     return (
         <Container>
             <div>
-                { currentUser ?  <UserShow currentUser={currentUser} /> : <h1> Please Log in </h1>}  </div>
+                { currentUser ?  <UserShow currentUser={currentUser} /> : <h1> Please Log in </h1>}  
+            </div>
         </Container>
     )
 }
