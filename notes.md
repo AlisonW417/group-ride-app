@@ -22,6 +22,7 @@ A user can...
 
 ### To Do:
 - add serializers to backend 
+- re-format forms for better styling (react bootstrap)
 
 NEXT SESSIONS:
 - start adding ability to create a ride (full CRUD for ride)
