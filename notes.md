@@ -24,7 +24,12 @@ A user can...
 - add serializers to backend 
 - re-format forms for better styling (react bootstrap)
 
-NEXT SESSIONS:
+NEXT SESSION:
+- add action/fetch request to create ride on backend 
+- add ride component to view ride summary/details
+- render ride component(s) on user show component
+
+FUTURE SESSIONS:
 - start adding ability to create a ride (full CRUD for ride)
 - start adding ride show and index pages (allow for users to view rides posted by other users)
 - add ride filtering function 
