@@ -1,12 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-const MainContainer = () => {
+const MainContainer = ({ currentUser }) => {
     return (
         <Container>
             <div>
-                <h1>Welcome to the Group Ride App</h1>
-            </div>
+                { currentUser ? <h1>Welcome to the Group Ride App, {currentUser.attributes.username} </h1> : <h1> Please Log in </h1>}  </div>
         </Container>
     )
 }

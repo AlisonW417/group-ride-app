@@ -16,12 +16,13 @@ class App extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props
     return (
       <Container>
         <Navigation />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
-        <MainContainer />
+        <MainContainer currentUser={currentUser} />
       </Container>
     );
   } 
