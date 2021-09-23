@@ -11,11 +11,18 @@ const RideForm = ( { rideFormData, updateRideForm }) => {
         }
         updateRideForm(rideData)
     }
+
+    const handleOnSubmit = event => {
+        event.preventDefault()
+        
+    }
+
+
     return (
         <Container>
             <div>
                 <h2>Enter details for your upcoming ride!</h2>
-                <Form>
+                <Form onSubmit={handleOnSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label>Ride Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter your ride's name" name="name" value={rideFormData.name} onChange={handleOnChange} />
