@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateRideForm } from '../actions/rideForm'
+import { updateRideForm } from '../actions/rideForm';
+import { createRide } from '../actions/ride';
 import { Container, Form, Button } from 'react-bootstrap';
 
-const RideForm = ( { rideFormData, updateRideForm }) => {
+const RideForm = ( { rideFormData, updateRideForm, createRide, history, userId }) => {
     const handleOnChange = event => {
         const rideData = {
             ...rideFormData,
@@ -14,7 +15,11 @@ const RideForm = ( { rideFormData, updateRideForm }) => {
 
     const handleOnSubmit = event => {
         event.preventDefault()
-        
+        createRide({
+            ...rideFormData,
+            userId
+        }, history)
+
     }
 
 
@@ -73,9 +78,11 @@ const RideForm = ( { rideFormData, updateRideForm }) => {
 }
 
 const mapStateToProps = state => {
+    const userId = state.currentUser ? state.currentUser.id : ""
     return {
-        rideFormData: state.rideForm
+        rideFormData: state.rideForm,
+        userId
     }
 }
 
-export default connect(mapStateToProps, { updateRideForm })(RideForm)
+export default connect(mapStateToProps, { updateRideForm, createRide })(RideForm)
