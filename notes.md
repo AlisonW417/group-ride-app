@@ -26,7 +26,6 @@ A user can...
 
 NEXT SESSION:
 - add ride serializer
-- add action/fetch request to create ride on backend 
 - add ride component to view ride summary/details
 - render ride component(s) on user show component
 

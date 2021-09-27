@@ -23,6 +23,7 @@ export const createRide = (rideData, history) => {
         .then(resp => resp.json())
         .then(resp => {
                 console.log(resp)
+                
         })
     }
 }

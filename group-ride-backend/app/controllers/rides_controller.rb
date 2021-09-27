@@ -3,7 +3,7 @@ class RidesController < ApplicationController
         #byebug
         @ride = current_user.rides.build(ride_params)
         if @ride.save 
-            render json: @ride
+            render json: RideSerializer.new(@ride).serializable_hash.to_json
         else 
             response = {
                 error: @ride.errors.full_messages.to_string
