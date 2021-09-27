@@ -25,7 +25,6 @@ A user can...
 - re-format forms for better styling (react bootstrap)
 
 NEXT SESSION:
-- add ride serializer
 - add ride component to view ride summary/details
 - render ride component(s) on user show component
 

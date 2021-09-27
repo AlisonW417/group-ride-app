@@ -1,3 +1,11 @@
+import { resetRideForm } from './rideForm';
+
+export const addRide = (ride) => {
+    return {
+        type: "ADD_RIDE",
+        ride
+    }
+}
 export const createRide = (rideData, history) => {
     return dispatch => {
         const newRideData = {
@@ -23,7 +31,10 @@ export const createRide = (rideData, history) => {
         .then(resp => resp.json())
         .then(resp => {
                 console.log(resp)
-                
+                dispatch(addRide(resp.data))
+                dispatch(resetRideForm())
+                // history.push(`/rides/${resp.data.id}`)
+                // need to updated this when routes are updated
         })
     }
 }

@@ -5,8 +5,8 @@ export const updateRideForm = formData => {
     }
 }
 
-export const resetLoginForm = () => {
+export const resetRideForm = () => {
     return {
-        type: "RESET_RIDE_FORM",
+        type: "RESET_RIDE_FORM"
     }
 }
