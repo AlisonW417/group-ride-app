@@ -26,6 +26,7 @@ A user can...
 
 NEXT SESSION:
 - get ride / ride list to show in redux store upon creation
+- add action and reducer to fetch all of the rides
 - add ride component to view ride summary/details
 - render ride component(s) on user show component
 

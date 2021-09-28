@@ -1,6 +1,7 @@
 // import { FormSelect } from 'react-bootstrap'
 import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
+import { getRides } from './ride'
 
 export const setCurrentUser = user => {
     return {
@@ -88,6 +89,7 @@ export const getCurrentUser = () => {
                 console.log(resp.error)
             } else {
                 dispatch(setCurrentUser(resp.data))
+                dispatch(getRides())
             }
         })
         .catch(err => console.log(err))

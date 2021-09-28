@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/user';
+import { loadRides } from './actions/ride';
 // import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
@@ -36,8 +37,9 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    rides: state.rideList
   })
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser, loadRides })(App);

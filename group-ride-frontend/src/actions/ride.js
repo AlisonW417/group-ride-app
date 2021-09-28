@@ -1,5 +1,31 @@
 import { resetRideForm } from './rideForm';
 
+export const loadRides = (rides) => {
+    return {
+        type: "GET_RIDES",
+        rides
+    }
+}
+
+export const getRides = () => {
+    return dispatch => {
+        return fetch("http://localhost:3001/rides", {
+            credential: 'include',
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+        })
+        .then(r=>r.json())
+        .then(resp => {
+            console.log(resp)
+            dispatch(loadRides(resp.data))
+        })
+        .catch(err => console.log(err))
+    }
+}
+
 export const addRide = (ride) => {
     return {
         type: "ADD_RIDE",
