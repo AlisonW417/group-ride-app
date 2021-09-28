@@ -7,6 +7,12 @@ export const loadRides = (rides) => {
     }
 }
 
+export const clearRides = () => {
+    return {
+        type: "CLEAR_RIDES"
+    }
+}
+
 export const getRides = () => {
     return dispatch => {
         return fetch("http://localhost:3001/rides", {

@@ -4,6 +4,8 @@ const rideList = (state = [], action) => {
             return action.rides
         case "ADD_RIDE":
             return state.concat(action.ride)
+        case "CLEAR_RIDES":
+            return []
         default: 
             return state
     }

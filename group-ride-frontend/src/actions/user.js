@@ -2,6 +2,7 @@
 import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
 import { getRides } from './ride'
+import { clearRides } from './ride'
 
 export const setCurrentUser = user => {
     return {
@@ -31,6 +32,7 @@ export const login = (loginData, history) => {
         .then(resp => {
             console.log(resp)
             dispatch(setCurrentUser(resp.data))
+            dispatch(getRides())
             dispatch(resetLoginForm())
             history.push('/')
         })
@@ -56,6 +58,7 @@ export const signup = (signupData, history) => {
         .then(resp => {
             console.log(resp)
             dispatch(setCurrentUser(resp.data))
+            dispatch(getRides())
             dispatch(resetSignupForm())
             history.push('/')
         })
@@ -66,6 +69,7 @@ export const signup = (signupData, history) => {
 export const logout = () => {
     return (dispatch) => {
         dispatch(clearCurrentUser())
+        dispatch(clearRides())
         return fetch('http://localhost:3001/logout', {
             credentials: 'include',
             method: "DELETE"
