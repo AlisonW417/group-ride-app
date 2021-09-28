@@ -1,4 +1,9 @@
 class RidesController < ApplicationController
+    def index 
+        @rides = Ride.all
+        render json: RideSerializer.new(@rides).seriazliable_hash.to_json
+    end 
+
     def create 
         #byebug
         @ride = current_user.rides.build(ride_params)

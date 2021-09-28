@@ -6,6 +6,7 @@ export const addRide = (ride) => {
         ride
     }
 }
+
 export const createRide = (rideData, history) => {
     return dispatch => {
         const newRideData = {
