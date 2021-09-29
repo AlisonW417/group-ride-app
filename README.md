@@ -9,5 +9,5 @@ A user can...
 - create, update and delete their own rides
 - view rides created by other users
 - sign up for a ride 
-- comment on a ride?
+- comment on a ride (stretch goal)
 - add images for a ride
