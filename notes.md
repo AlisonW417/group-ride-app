@@ -1,6 +1,6 @@
 # Group Ride Application Notes
 ## Summary
-Revisiting my LV Group Rides sinatra project to utilize ruby on rails as a backend and react frontend 
+Revisiting my LV Group Rides sinatra project to utilize ruby on rails as a backend with a react frontend 
 
 ## User Stories
 A user can...
