@@ -10,6 +10,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import RideForm from './components/RideForm';
 import RideList from './components/RideList';
+import RideCard from './components/RideCard';
 import MainContainer from './components/MainContainer';
 import { Route } from 'react-router-dom';
 
@@ -34,6 +35,10 @@ class App extends React.Component {
         <Route exact path='/rides' render={props => {
           const rides = rideList
           return <RideList rides={rides}/>
+        }} />
+        <Route exact path='/rides/:id' render={props => {
+          const ride = rideList.find(ride => ride.id === props.match.params.id)
+          return <RideCard ride={ride}{...props} />
         }} />
       </Container>
     );
