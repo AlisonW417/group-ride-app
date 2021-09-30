@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import RideForm from './components/RideForm';
+import RideList from './components/RideList';
 import MainContainer from './components/MainContainer';
 import { Route } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props
+    const { currentUser, rideList } = this.props
     return (
       <Container>
         <Navigation currentUser={currentUser} />
@@ -30,6 +31,10 @@ class App extends React.Component {
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/rides/new' component={RideForm} />
+        <Route exact path='/rides' render={props => {
+          const rides = rideList
+          return <RideList rides={rides}/>
+        }} />
       </Container>
     );
   } 
@@ -38,7 +43,7 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return ({
     currentUser: state.currentUser,
-    rides: state.rideList
+    rideList: state.rideList
   })
 }
 
