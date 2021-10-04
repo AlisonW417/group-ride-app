@@ -11,6 +11,7 @@ const Navigation = ( { currentUser }) => {
                     { currentUser ? 
                         <Nav className="me-auto">
                             <Nav.Link href="/rides/new">Create a Ride</Nav.Link>
+                            <Nav.Link href="/rides">View Rides</Nav.Link>
                         </Nav>
                     : 
                         <Nav className="me-auto">

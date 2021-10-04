@@ -26,7 +26,7 @@ A user can...
 
 NEXT SESSION:
 - add ride component to view ride summary/details
-- add ride attributes to ride card so details can be viewed on '/rides' page
+- add ride attributes to ride card so details can be viewed on '/rides' page (include posting User in Ride card!!)
 - render ride component(s) on user show component
 
 FUTURE SESSIONS:
