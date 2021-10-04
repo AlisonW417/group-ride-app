@@ -25,9 +25,8 @@ A user can...
 - re-format forms for better styling (react bootstrap)
 
 NEXT SESSION:
-- get ride / ride list to show in redux store upon creation
-- add action and reducer to fetch all of the rides
 - add ride component to view ride summary/details
+- add ride attributes to ride card so details can be viewed on '/rides' page
 - render ride component(s) on user show component
 
 FUTURE SESSIONS:
