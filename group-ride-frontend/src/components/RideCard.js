@@ -1,22 +1,32 @@
 import React from 'react';
 import { Card, ListGroup, ListGroupItem} from 'react-bootstrap';
 
-const RideCard = () => {
+const RideCard = ({ride}) => {
     return (
         <div>
+
+{/* name(pin):"Test Ride 1"
+starting_location(pin):"Test Location"
+starting_time(pin):"2000-01-01T16:40:00.000Z"
+date(pin):"2021-09-28"
+level(pin):"beginner"
+distance(pin):"15 Miles"
+description(pin):"Testing the description"
+user_id(pin):7 */}
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{ride.attributes.name}</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                    {ride.attributes.description}
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroupItem>Cras justo odio</ListGroupItem>
-                <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                Date: <ListGroupItem>{ride.attributes.date}</ListGroupItem>
+                Starting Location: <ListGroupItem>{ride.attributes.starting_location}</ListGroupItem>
+                Start Time: <ListGroupItem>{ride.attributes.starting_time}</ListGroupItem>
+                Level: <ListGroupItem>{ride.attributes.level}</ListGroupItem>
+                Distance: <ListGroupItem>{ride.attributes.distance}</ListGroupItem>
             </ListGroup>
             <Card.Body>
                 <Card.Link href="#">Card Link</Card.Link>
