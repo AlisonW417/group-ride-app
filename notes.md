@@ -25,8 +25,10 @@ A user can...
 - re-format forms for better styling (react bootstrap)
 
 NEXT SESSION:
-- add ride component to view ride summary/details
 - add ride attributes to ride card so details can be viewed on '/rides' page (include posting User in Ride card!!)
+- update time format
+- update date format 
+- add user to ride card?
 - render ride component(s) on user show component
 
 FUTURE SESSIONS:

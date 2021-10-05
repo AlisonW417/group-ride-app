@@ -29,8 +29,7 @@ user_id(pin):7 */}
                 Distance: <ListGroupItem>{ride.attributes.distance}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Card.Link href="#">Sign up!</Card.Link>
             </Card.Body>
         </Card> 
         </div>
