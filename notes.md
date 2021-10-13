@@ -27,7 +27,7 @@ A user can...
 NEXT SESSION:
 - update time format
 - update date format 
-- add user to ride card?
+- add user to ride card? <-- need to map state to props on ride list?
 
 FUTURE SESSIONS:
 - start adding ability to create a ride (full CRUD for ride)
