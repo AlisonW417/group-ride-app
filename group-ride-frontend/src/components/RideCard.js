@@ -3,6 +3,7 @@ import { Card, ListGroup, ListGroupItem} from 'react-bootstrap';
 
 const RideCard = ({ride}) => {
     return (
+        ride ?
         <div>
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
@@ -23,7 +24,8 @@ const RideCard = ({ride}) => {
                 <Card.Link href="#">Sign up!</Card.Link>
             </Card.Body>
         </Card> 
-        </div>
+        </div>:
+        null
     )
 }
 
