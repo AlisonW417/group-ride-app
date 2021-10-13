@@ -24,7 +24,7 @@ const RideCard = ({ride}) => {
                 <Card.Link href="#">Sign up!</Card.Link>
             </Card.Body>
         </Card> 
-        </div>:
+        </div> :
         null
     )
 }

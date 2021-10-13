@@ -35,7 +35,7 @@ class App extends React.Component {
         <Route exact path='/rides/new' component={RideForm} />
         <Route exact path='/rides' render={props => {
           const rides = rideList
-          return <RideList rides={rides}/>
+          return <RideList rides={rides} />
         }} />
         <Route exact path='/rides/:id' render={props => {
           const ride = rideList.find(ride => ride.id === props.match.params.id)
