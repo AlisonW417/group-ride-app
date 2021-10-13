@@ -26,7 +26,8 @@ class App extends React.Component {
         <Navigation currentUser={currentUser} />
         <Route exact path='/' render={() => {
           const user = currentUser
-          return <MainContainer currentUser={user} />
+          const rides = rideList
+          return <MainContainer currentUser={user} rides={rides} />
         }
         }/>
         <Route exact path='/signup' component={Signup} />

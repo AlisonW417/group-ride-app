@@ -4,15 +4,6 @@ import { Card, ListGroup, ListGroupItem} from 'react-bootstrap';
 const RideCard = ({ride}) => {
     return (
         <div>
-
-{/* name(pin):"Test Ride 1"
-starting_location(pin):"Test Location"
-starting_time(pin):"2000-01-01T16:40:00.000Z"
-date(pin):"2021-09-28"
-level(pin):"beginner"
-distance(pin):"15 Miles"
-description(pin):"Testing the description"
-user_id(pin):7 */}
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
             <Card.Body>
